@@ -2,15 +2,15 @@
     <div class="container">
         <div class="skeletons">
             <div class="skeleton_poster">
+            </div>
                 <div class="specs">
-                    <div class="skeleton_title"></div> 
+                    <div class="skeleton_title" id="skeleton_title"></div> 
                     <div class="skeleton_spec"></div> 
                     <div class="skeleton_plot"></div> 
                     <div class="skeleton_etc"></div> 
                     <div class="skeleton_etc"></div> 
                     <div class="skeleton_etc"></div> 
                 </div>
-            </div>
         </div>
     </div>
 </template>
@@ -40,23 +40,17 @@ export default {
     border-radius: 10px;
     background-color: lightgrey;
     flex-shrink: 0;
-    display: flex;
+    
 
 }
 .specs {
     flex-grow: 1;
-}
-.skeleton {
-    border-radius: 10px;
-    background-color: lightcyan;
-    display: flex;
 }
 .skeleton_title {
     width: 80%;
     height: 70px;
     border-radius: 10px;
     background-color: lightgrey;
-    display: flex;
 }
 .skeleton_spec {
     width: 60%;
@@ -64,6 +58,7 @@ export default {
     margin-top: 20px;
     border-radius: 10px;
     background-color: lightgrey;
+
 }
 .skeleton_plot {
     width: 100%;
