@@ -4,7 +4,7 @@ import _uniqBy from 'lodash/uniqBy'
 
 export default {
     namespaced: true,
-    state: () =>({
+    state: () => ({
         movies: [],
         message:'Serch for the movie title!',
         loading: false,
@@ -19,6 +19,7 @@ export default {
         },
         resetMovies(state) {
             state.movies = []
+            state.loading = false
         }
     },
     actions: {
@@ -87,7 +88,7 @@ export default {
             })
 
             try {
-                const res = await _fetchMovie({payload})
+                const res = await _fetchMovie(payload)
                 commit('updateState', {
                     theMovie: res.data
                 })

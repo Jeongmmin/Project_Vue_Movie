@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <div class="skeletons">
+        <template v-if="loading">
+            <div class="skeletons">
             <div class="skeleton_poster">
             </div>
             <div class="specs">
@@ -11,9 +12,28 @@
                 <div class="skeleton_etc"></div> 
                 <div class="skeleton_etc"></div> 
             </div>
+            </div>
+            <loader class="spinner-border-fixed"
+            :size="3"
+            :zIndex="9"
+            ></loader>
+        </template>
+        <div v-else class="movie-details">
+            <div class="poster"></div>
+            <div class="specs">
+                <div class="title">
+                    {{ theMovie.Title }}
+                </div>
+                <div class="labels">
+                    <span>{{ theMovie.Released }}</span>
+                    <span>{{ theMovie.Runtime }}</span>
+                    <span>{{ theMovie.Country }}</span>
+                </div>
+                <div class="plot">
+                    {{ theMovie.Plot }}
+                </div>
+            </div>
         </div>
-        <!-- <button>안녕</button>// -->
-        <loader class="spinner-border-fixed"></loader>
     </div>
 </template>
 
@@ -22,6 +42,15 @@ import Loader from '../components/Loader.vue'
 export default {
     components: {
         Loader
+    },
+    computed: {
+        theMovie() {
+            return this.$store.state.movie.theMovie
+        },
+        loading() {
+            return this.$store.state.movie.loading
+
+        }
     },
     created() {
         console.log(this.$route)
@@ -35,13 +64,9 @@ export default {
 <style scoped>
 .container {
     padding-top: 40px;
-    position: relative;
-    z-index: -1;
 }
 .skeletons {
     display: flex;
-    position: relative;
-    z-index: -1;
 }
 .skeleton_poster {
     width: 500px;
