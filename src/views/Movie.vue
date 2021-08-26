@@ -3,20 +3,26 @@
         <div class="skeletons">
             <div class="skeleton_poster">
             </div>
-                <div class="specs">
-                    <div class="skeleton_title" id="skeleton_title"></div> 
-                    <div class="skeleton_spec"></div> 
-                    <div class="skeleton_plot"></div> 
-                    <div class="skeleton_etc"></div> 
-                    <div class="skeleton_etc"></div> 
-                    <div class="skeleton_etc"></div> 
-                </div>
+            <div class="specs">
+                <div class="skeleton_title" id="skeleton_title"></div> 
+                <div class="skeleton_spec"></div> 
+                <div class="skeleton_plot"></div> 
+                <div class="skeleton_etc"></div> 
+                <div class="skeleton_etc"></div> 
+                <div class="skeleton_etc"></div> 
+            </div>
         </div>
+        <!-- <button>안녕</button>// -->
+        <loader class="spinner-border-fixed"></loader>
     </div>
 </template>
 
 <script>
+import Loader from '../components/Loader.vue'
 export default {
+    components: {
+        Loader
+    },
     created() {
         console.log(this.$route)
         this.$store.dispatch('movie/serchMovieWithId', {
@@ -29,9 +35,13 @@ export default {
 <style scoped>
 .container {
     padding-top: 40px;
+    position: relative;
+    z-index: -1;
 }
 .skeletons {
     display: flex;
+    position: relative;
+    z-index: -1;
 }
 .skeleton_poster {
     width: 500px;
