@@ -3,7 +3,7 @@
     :style="{
         width: `${size}rem`,
         height: `${size}rem`,
-        'z-index': z-index
+        'z-index': zIndex
         }"
     :class="{ 
         absolute, 

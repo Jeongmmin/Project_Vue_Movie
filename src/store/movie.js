@@ -89,6 +89,7 @@ export default {
 
             try {
                 const res = await _fetchMovie(payload)
+                console.log(res.data)
                 commit('updateState', {
                     theMovie: res.data
                 })
@@ -110,7 +111,8 @@ export default {
 function _fetchMovie(payload) {
     const { title, type, year, page, id} = payload
     const OMDB_API_KEY = '7035c60c'
-    const url = id ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
+    const url = id
+    ? `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&i=${id}` 
     : `https://www.omdbapi.com/?apikey=${OMDB_API_KEY}&s=${title}&type=${type}&y=${year}&page=${page}`
 
     return new Promise((resolve, reject) => {
