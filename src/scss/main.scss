@@ -8,6 +8,7 @@ $container-max-widths: (
     xl: 1140px,
     xxl: 1364px
 );
+$nav-link-hover-color: black;
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/variables";

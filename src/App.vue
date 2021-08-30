@@ -19,13 +19,14 @@ export default {
 @import "scss/main";
 .nav-link {
     color: $gray-600;
-    :hover {
-      text-decoration-color: $primary;
-    }
 }
-.nav-item {
+.router-link {
     :hover {
       text-decoration-color: black;
     }
+}
+select > option:hover {
+  color: #888;
+  cursor: pointer;
 }
 </style>

@@ -24,7 +24,7 @@
                 </option>
             </select>
         </div>
-        <button class="btn"
+        <button class="btn btn-primary"
         @click="apply">
         Apply
         </button>    
@@ -100,6 +100,7 @@ export default {
         height: 50px;
         flex-shrink: 0;
         font-weight: 700;
+        color: white;
     }
 }
 </style>
