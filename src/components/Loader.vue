@@ -35,18 +35,18 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .spinner-border {
     margin: auto;
     top: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     right: 0;
-}
-.spinner-border-absolute {
-    position: absolute;
-}
-.spinner-border-fixed {
-    position: fixed;
+    &.absolute {
+        position: absolute;
+    }
+    &.fixed {
+        position: fixed;
+    }
 }
 </style>

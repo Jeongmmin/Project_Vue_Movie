@@ -75,33 +75,31 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .container {
     display: flex;
-    
-}
-.container > * {
-    margin-right: 10px;
-    font-size: 15px;
-}
-/* &:last-child {
+    > * {
+        margin-right: 10px;
+        font-size: 15px;
+        &:last-child {
         margin-right: 0;
-    } */
-.selects {
+        }
+    }
+    .selects {
         display: flex;
+        select {
+        width: 120px;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0;
+        }
+        }
+    }
+    .btn {
+        width: 120px;
+        height: 50px;
+        flex-shrink: 0;
+        font-weight: 700;
+    }
 }
-select {
-    width: 120px;
-    margin-right: 10px;
-
-}
-.btn {
-    width: 120px;
-    height: 50px;
-    font-weight: 700;
-    flex-shrink: 0;
-    background-color: #ccabe2;
-    color: white;
-}
-
 </style>

@@ -23,7 +23,7 @@
             class="poster">
                 <Loader
                 v-if="imageLoading"
-                class="spinner-border-absolute"></Loader>
+                absolute ></Loader>
             </div>
             <div class="specs">
                 <div class="title">
@@ -115,109 +115,105 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/main";
 .container {
     padding-top: 40px;
-}
-.skeletons {
+    }
+    .skeletons {
     display: flex;
-}
-.skeleton_poster {
-    width: 500px;
-    height: 500px * 3/2;
-    margin-right: 70px;
-    border-radius: 10px;
-    background-color: lightgrey;
-    flex-shrink: 0;
-    
-
-}
-.specs {
-    flex-grow: 1;
-}
-.skeleton_title {
-    width: 80%;
-    height: 70px;
-    border-radius: 10px;
-    background-color: lightgrey;
-}
-.skeleton_spec {
-    width: 60%;
-    height: 30px;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: lightgrey;
-
-}
-.skeleton_plot {
-    width: 100%;
-    height: 250px;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: lightgrey;
-}
-.skeleton_etc {
-    width: 50%;
-    height: 50px;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: lightgrey;
-}
-.movie-details {
+    .poster {
+        flex-shrink: 0;
+        width: 500px;
+        height: 500px * 3/2;
+        margin-right: 70px;
+    }
+    .specs {
+        flex-grow: 1;
+    }
+    .skeleton {
+        border-radius: 10px;
+        background-color: $gray-200;
+        &.title {
+        width: 80%;
+        height: 70px;
+        }
+        &.spec {
+        width: 60%;
+        height: 30px;
+        margin-top: 20px;
+        }
+        &.plot {
+        width: 100%;
+        height: 250px;
+        margin-top: 20px;
+        }
+        &.etc {
+        width: 50%;
+        height: 50px;
+        margin-top: 20px;
+        }
+    }
+    }
+    .movie-details {
     display: flex;
-    color: gray;
-}
-.poster {
-    width: 400px;
-    height: 400px*3/2;
-    margin-right: 170px;
-    border-radius: 10px;
-    background-color: lightgray;
-    background-size: cover;
-    background-position: center;
-    flex-shrink: 0;
-    position: relative;
-}
-.specs {
-    flex-grow: 1;
-}
-.title {
-    color: black;
-    font-family: 'Oswald', sans-serif;
-    font-size: 70px;
-    line-height: 1;
-    margin-bottom: 30px;
-}
-.labels {
-    color: #fdc000;
-}
-span::after {
-    content: "\00b7";
-    margin: 0 6px;
-}
-span:last-child::after {
-    display:none;
-}
-.plot {
-    margin-top: 20px;
-}
-h3 {
-    margin: 24px 0 6px;
-    color: black;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
-}
-.rating-wrap {
-    display: flex;
-}
-.rating {
-    display: flex;
-    align-content: center;
-    margin-right: 32px;
-}
-img {
-    height: 30px;
-    flex-shrink: 0;
-    margin-right: 10px;
+    color: $gray-600;
+    .poster {
+        width: 500px;
+        height: 500px * 3/2;
+        margin-right: 70px;
+        border-radius: 10px;
+        background-color: $gray-200;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        flex-shrink: 0;
+    }
+    .specs {
+        flex-grow: 1;
+        .title {
+        color: $black;
+        font-family: "Oswald", sans-serif;
+        font-size: 70px;
+        line-height: 1;
+        margin-bottom: 30px;
+        }
+        .labels {
+        color: $primary;
+        span {
+            &::after {
+            content: "\00b7";
+            margin: 0 6px;
+            }
+            &:last-child::after {
+            display: none;
+            }
+        }
+        }
+        .plot {
+        margin-top: 20px;
+        }
+        .ratings {
+        .rating-wrap {
+            display: flex;
+            .rating {
+            display: flex;
+            align-items: center;
+            margin-right: 32px;
+            img {
+                height: 30px;
+                flex-shrink: 0;
+                margin-right: 6px;
+            }
+            }
+        }
+        }
+        h3 {
+        margin: 24px 0 6px;
+        color: $black;
+        font-family: "Oswald", sans-serif;
+        font-size: 20px;
+        }
+    }
 }
 </style>

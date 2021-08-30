@@ -41,22 +41,22 @@
     
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/main";
 .container {
     padding-top: 40px;
 }
 h1 {
     line-height: 1;
-    font-family: "oswald", sans-serif;
+    font-family: "Oswald", sans-serif;
     font-size: 80px;
-}
-span {
-        /* color: #fdc000; */
-        color: #ccabe2;
+    span {
+        color: $primary;
     }
-p{
+}
+p {
     margin: 30px 0;
-    color: rgb(122, 122, 122);
+    color: $gray-600;
 }
 /* img {
     border-image-outset: 30px black;
@@ -64,4 +64,5 @@ p{
 /* .carousel-inner {
     height: ;
 } */
+    /* color: #fdc000; */
 </style>

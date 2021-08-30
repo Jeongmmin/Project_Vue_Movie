@@ -53,16 +53,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 header {
     height: 70px;
     display: flex;
     align-items: center;
     padding: 0 40px;
     position: relative;
-}
-.logo {
-    margin-right: 40px;
+    .logo {
+        margin-right: 40px;
+    }
 }
 /* .nav-item:active {
     background-color: red;

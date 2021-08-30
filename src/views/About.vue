@@ -3,7 +3,7 @@
     <div class="photo">
       <Loader
       v-if="imageLoading"
-      class="spinner-border-absolute">
+      absolute >
       </Loader>
       <img 
       :src="image" 
@@ -58,27 +58,26 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../scss/main";
 .about {
   text-align: center;
-}
-.photo {
-  position: relative;
-}
-img {
-  width: 250px;
-  height: 250px;
-  margin: 40px auto 20px;
-  padding: 30px;
-  border: 10px solid lightgray;
-  border-radius: 50%;
-  box-sizing: border-box;
-  text-align: center;
-  background-color: lightgray;
-}
-.name {
-  font-size: 40px;
-  font-family: "Oswald", sans-serif;
-  margin-bottom: 20px;
+    img {
+      width: 250px;
+    height: 250px;
+    margin: 40px auto 20px;
+    padding: 30px;
+    border: 10px solid $gray-300;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: $gray-200;
+    position: relative;
+    
+  }
+  .name {
+    font-size: 40px;
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 20px;
+  }
 }
 </style>
