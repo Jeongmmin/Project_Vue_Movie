@@ -24,7 +24,7 @@
                 </option>
             </select>
         </div>
-        <button class="btn btn-warning"
+        <button class="btn"
         @click="apply">
         Apply
         </button>    
@@ -100,6 +100,8 @@ select {
     height: 50px;
     font-weight: 700;
     flex-shrink: 0;
+    background-color: #ccabe2;
+    color: white;
 }
 
 </style>

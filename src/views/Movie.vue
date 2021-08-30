@@ -19,8 +19,12 @@
         </template>
         <div v-else class="movie-details">
             <div 
-            :style="{ backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})` }" 
-            class="poster"></div>
+            :style="{ backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})`}" 
+            class="poster">
+                <Loader
+                v-if="imageLoading"
+                class="spinner-border-absolute"></Loader>
+            </div>
             <div class="specs">
                 <div class="title">
                     {{ theMovie.Title }}
@@ -75,6 +79,11 @@ export default {
     components: {
         Loader
     },
+    data() {
+        return {
+            imageLoading: true
+        }
+    },
     computed: {
         theMovie() {
             return this.$store.state.movie.theMovie
@@ -91,7 +100,16 @@ export default {
     },
     methods: {
         requestDiffSizeImage(url, size = 700) {
-            return url.replace('SX300', `SX${size}`)
+            if (!url || url ==='N/A') {
+                this.imageLoading = false
+                return ''
+            }
+            const src = url.replace('SX300', `SX${size}`)
+            this.$loadImage(src)
+                .then(() => {
+                    this.imageLoading = false
+                })
+            return src
         }
     }
 }
@@ -158,6 +176,7 @@ export default {
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
+    position: relative;
 }
 .specs {
     flex-grow: 1;

@@ -2,7 +2,7 @@
     <router-link 
         to="/" 
         class="logo">
-            <span>OMDbAPI</span>.COM
+            <span>JMDbAPI</span>.COM
     </router-link>
 </template>
 
@@ -15,6 +15,6 @@
         
     }
     span {
-            color: #fdc000;
+            color: #ccabe2;
         }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <footer>
         <Logo></Logo>
-        <a href="http://google/com"
+        <a href="https://www.omdbapi.com/"
         target="_blank">
         (c){{ new Date().getFullYear() }} JEONGMIN</a>
     </footer>
