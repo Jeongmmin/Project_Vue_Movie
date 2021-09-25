@@ -6,7 +6,7 @@
 component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 사용하여 화면간의 전환을 간편하게 할 수 있도록 적용했습니다.
 또한 Scss를 적용하여 코드를 더욱 간결하게 보이도록 구현했습니다.
 
-[movie - Chrome 2021-09-25 12-11-16.mp4](JMDB_API%20Read%20Me%201c4666a62b6443cc91f8a88e6c5ac487/movie_-_Chrome_2021-09-25_12-11-16.mp4)
+[movie - Chrome 2021-09-25 12-11-16.mp4](movie_-_Chrome_2021-09-25_12-11-16.mp4)
 
 # Installation
 
