@@ -6,7 +6,7 @@
 component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 사용하여 화면간의 전환을 간편하게 할 수 있도록 적용했습니다.
 또한 Scss를 적용하여 코드를 더욱 간결하게 보이도록 구현했습니다.
 
-![Movie](https://user-images.githubusercontent.com/82005305/134755897-ba128dc3-a2e1-43e1-a418-cb71ea42bcea.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/82005305/135117113-a16c2cd5-f156-4720-a87c-f4a0259a0930.gif)
 
 
 
