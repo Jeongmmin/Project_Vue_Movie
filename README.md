@@ -7,11 +7,11 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
 또한 Scss를 적용하여 코드를 더욱 간결하게 보이도록 구현했습니다.
 
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/82005305/135117113-a16c2cd5-f156-4720-a87c-f4a0259a0930.gif)
+<img src="https://user-images.githubusercontent.com/82005305/135117113-a16c2cd5-f156-4720-a87c-f4a0259a0930.gif" align="center">
 
-<br><br>
 
-![ezgif com-gif-maker](https://user-images.githubusercontent.com/82005305/135117720-90b32ce8-10a8-4e36-92e3-525e55062386.gif)
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/82005305/135118356-81e27083-9de7-4630-82e4-28d82fea12cf.gif)
+
 
 
 
