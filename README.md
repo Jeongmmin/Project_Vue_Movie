@@ -8,6 +8,18 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
 
 <br/>
 
+## 배포 사이트
+<div align="center">  
+  <p>사이트로 이동하기</p>  
+  
+  '''   
+  [![🎞 project-vue-movie](https://user-images.githubusercontent.com/82005305/156928842-b46ba520-1629-4ddf-9da2-e539fae67eeb.gif)]("project-vue-movie.netlify.app")
+ 
+  [🎞 project-vue-movie]("project-vue-movie.netlify.app")   
+  
+  '''
+</div>
+
 ## 📝 Skill & Preview
 <p align="center">
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> &nbsp
