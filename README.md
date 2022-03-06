@@ -8,7 +8,7 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
 
 <br/>
 
-## 배포 사이트
+<!-- ## 배포 사이트
 <div align="center">  
   <p>사이트로 이동하기</p>  
   
@@ -18,7 +18,7 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
   [🎞 project-vue-movie]("project-vue-movie.netlify.app")   
   
   '''
-</div>
+</div> -->
 
 ## 📝 Skill & Preview
 <p align="center">
