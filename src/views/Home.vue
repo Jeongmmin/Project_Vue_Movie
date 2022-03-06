@@ -8,8 +8,6 @@
 import Headline from "../components/Headline.vue";
 import Search from "../components/Search.vue";
 import MovieList from "../components/MovieList";
-// // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
     components: {
@@ -17,8 +15,9 @@ export default {
         Search,
         MovieList,
     },
-};
+    created() {
+        this.$store.commit('movie/resetMovies')
+    }
+}
 </script>
 
-<style scoped>
-</style>
