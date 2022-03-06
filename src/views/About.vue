@@ -64,14 +64,14 @@ export default {
   text-align: center;
     img {
       width: 250px;
-    height: 250px;
-    margin: 40px auto 20px;
-    padding: 30px;
-    border: 10px solid $gray-300;
-    border-radius: 50%;
-    box-sizing: border-box;
-    background-color: $gray-200;
-    position: relative;
+      height: 250px;
+      margin: 40px auto 20px;
+      padding: 30px;
+      border: 10px solid $gray-300;
+      border-radius: 50%;
+      box-sizing: border-box;
+      background-color: $gray-200;
+      position: relative;
     
   }
   .name {

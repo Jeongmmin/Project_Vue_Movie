@@ -76,6 +76,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/main";
 .container {
     display: flex;
     > * {
@@ -101,6 +102,23 @@ export default {
         flex-shrink: 0;
         font-weight: 700;
         color: white;
+    }
+    @include media-breakpoint-down(lg) {
+        display:block;
+        input {
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        .selects {
+            margin-right: 0;
+            margin-bottom: 10px;
+            select {
+                width: 100%;
+            }
+        }
+        .btn {
+            width: 100%;
+        }
     }
 }
 </style>

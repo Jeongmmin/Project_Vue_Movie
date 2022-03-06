@@ -47,28 +47,27 @@
 @import "../scss/main";
 .container {
     padding-top: 40px;
-}
-h1 {
-    line-height: 1;
-    font-family: "Oswald", sans-serif;
-    font-size: 60px;
-    span {
-        color: $primary;
+    h1 {
+        line-height: 1;
+        font-family: "Oswald", sans-serif;
+        font-size: 60px;
+        span {
+            color: $primary;
+        }
+    }
+    p {
+        margin: 30px 0;
+        color: $gray-600;
+    }
+    .carousel {
+        margin: auto 100px;
+    }
+    @include media-breakpoint-down (lg) {
+        .carousel {
+            width: 100%;
+            margin: auto;
+        }
     }
 }
-p {
-    margin: 30px 0;
-    color: $gray-600;
-}
-.carousel {
-    margin: auto 100px;
-    
-}
-/* img {
-    border-image-outset: 30px black;
-} */
-/* .carousel-inner {
-    height: ;
-} */
-    /* color: #fdc000; */
+
 </style>
