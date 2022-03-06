@@ -1,12 +1,10 @@
 <template>
-        <RouterLink
+    <RouterLink
         :to="`/movie/${movie.imdbID}`"
         :style="{ backgroundImage: `url(${movie.Poster})` }"
-        class="movie">
-        <Loader
-            v-if="imageLoading"
-            :size="1.5"
-            absolute ></Loader>
+        class="movie"
+    >
+        <Loader v-if="imageLoading" :size="1.5" absolute></Loader>
         <div class="info">
             <div class="year">
                 {{ movie.Year }}
@@ -19,38 +17,37 @@
 </template>
 
 <script>
-import Loader from './Loader.vue'
+import Loader from "./Loader.vue";
 export default {
     components: {
-        Loader
+        Loader,
     },
     props: {
         movie: {
             typeof: Object,
-            default: () => ({})
-        }
+            default: () => ({}),
+        },
     },
     data() {
         return {
-            imageLoading: true
-        }
+            imageLoading: true,
+        };
     },
     mounted() {
-        this.init()
+        this.init();
     },
     methods: {
         async init() {
-            const poster = this.movie.Poster
-            if (!poster || poster === 'N/A') {
-                this.imageLoading = false
+            const poster = this.movie.Poster;
+            if (!poster || poster === "N/A") {
+                this.imageLoading = false;
+            } else {
+                await this.$loadImage(poster);
+                this.imageLoading = false;
             }
-            else {
-                await this.$loadImage(poster)
-                this.imageLoading = false
-            }
-        }
-    }
-} 
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -75,7 +72,7 @@ export default {
         border: 6px solid $primary;
     }
     .info {
-        background-color: rgba($black, .3);
+        background-color: rgba($black, 0.3);
         backdrop-filter: blur(10px);
         width: 100%;
         padding: 14px;
@@ -86,13 +83,13 @@ export default {
         left: 0;
         bottom: 0;
         .year {
-        color: $primary;
+            color: $primary;
         }
         .title {
-        color: $white;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+            color: $white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }

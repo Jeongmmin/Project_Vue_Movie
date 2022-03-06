@@ -4,26 +4,26 @@
             <div class="skeletons">
                 <div class="skeleton poster"></div>
                 <div class="specs">
-                <div class="skeleton title"></div>
-                <div class="skeleton spec"></div>
-                <div class="skeleton plot"></div>
-                <div class="skeleton etc"></div>
-                <div class="skeleton etc"></div>
-                <div class="skeleton etc"></div>
+                    <div class="skeleton title"></div>
+                    <div class="skeleton spec"></div>
+                    <div class="skeleton plot"></div>
+                    <div class="skeleton etc"></div>
+                    <div class="skeleton etc"></div>
+                    <div class="skeleton etc"></div>
                 </div>
             </div>
-            <Loader class="spinner-border-fixed"
-                :size="3"
-                :z-index="9"
-                fixed />
+            <Loader class="spinner-border-fixed" :size="3" :z-index="9" fixed />
         </template>
         <div v-else class="movie-details">
-            <div 
-            :style="{ backgroundImage: `url(${requestDiffSizeImage(theMovie.Poster)})`}" 
-            class="poster">
-                <Loader
-                v-if="imageLoading"
-                absolute ></Loader>
+            <div
+                :style="{
+                    backgroundImage: `url(${requestDiffSizeImage(
+                        theMovie.Poster
+                    )})`,
+                }"
+                class="poster"
+            >
+                <Loader v-if="imageLoading" absolute></Loader>
             </div>
             <div class="specs">
                 <div class="title">
@@ -40,14 +40,19 @@
                 <div class="ratings">
                     <h3>Ratings</h3>
                     <div class="rating-wrap">
-                        <div 
-                        v-for="{ Source: name, Value: score } in theMovie.Ratings"
-                        :key="name"
-                        :title="name"
-                        class="rating">
-                        <img
-                            :src="`https://raw.githubusercontent.com/ParkYoungWoong/vue3-movie-app/master/src/assets/${name}.png`"
-                            :alt="name">
+                        <div
+                            v-for="{
+                                Source: name,
+                                Value: score,
+                            } in theMovie.Ratings"
+                            :key="name"
+                            :title="name"
+                            class="rating"
+                        >
+                            <img
+                                :src="`https://raw.githubusercontent.com/ParkYoungWoong/vue3-movie-app/master/src/assets/${name}.png`"
+                                :alt="name"
+                            />
                             <span> {{ score }}</span>
                         </div>
                     </div>
@@ -74,45 +79,43 @@
 </template>
 
 <script>
-import Loader from '../components/Loader.vue'
+import { mapState } from 'vuex'
+import Loader from "../components/Loader.vue";
 export default {
     components: {
-        Loader
+        Loader,
     },
     data() {
         return {
-            imageLoading: true
-        }
+            imageLoading: true,
+        };
     },
     computed: {
-        theMovie() {
-            return this.$store.state.movie.theMovie
-        },
-        loading() {
-            return this.$store.state.movie.loading
-        }
+        ...mapState('movie', [
+            'theMovie',
+            'loading',
+        ])
     },
     created() {
-        console.log(this.$route)
-        this.$store.dispatch('movie/serchMovieWithId', {
-            id: this.$route.params.id
-        })
+        console.log(this.$route);
+        this.$store.dispatch("movie/searchMovieWithId", {
+            id: this.$route.params.id,
+        });
     },
     methods: {
         requestDiffSizeImage(url, size = 700) {
-            if (!url || url ==='N/A') {
-                this.imageLoading = false
-                return ''
+            if (!url || url === "N/A") {
+                this.imageLoading = false;
+                return "";
             }
-            const src = url.replace('SX300', `SX${size}`)
-            this.$loadImage(src)
-                .then(() => {
-                    this.imageLoading = false
-                })
-            return src
-        }
-    }
-}
+            const src = url.replace("SX300", `SX${size}`);
+            this.$loadImage(src).then(() => {
+                this.imageLoading = false;
+            });
+            return src;
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -120,8 +123,8 @@ export default {
 
 .container {
     padding-top: 40px;
-    }
-    .skeletons {
+}
+.skeletons {
     display: flex;
     .poster {
         flex-shrink: 0;
@@ -136,27 +139,27 @@ export default {
         border-radius: 10px;
         background-color: $gray-200;
         &.title {
-        width: 80%;
-        height: 70px;
+            width: 80%;
+            height: 70px;
         }
         &.spec {
-        width: 60%;
-        height: 30px;
-        margin-top: 20px;
+            width: 60%;
+            height: 30px;
+            margin-top: 20px;
         }
         &.plot {
-        width: 100%;
-        height: 250px;
-        margin-top: 20px;
+            width: 100%;
+            height: 250px;
+            margin-top: 20px;
         }
         &.etc {
-        width: 50%;
-        height: 50px;
-        margin-top: 20px;
+            width: 50%;
+            height: 50px;
+            margin-top: 20px;
         }
     }
-    }
-    .movie-details {
+}
+.movie-details {
     display: flex;
     color: $gray-600;
     .poster {
@@ -173,47 +176,47 @@ export default {
     .specs {
         flex-grow: 1;
         .title {
-        color: $black;
-        font-family: "Oswald", sans-serif;
-        font-size: 70px;
-        line-height: 1;
-        margin-bottom: 30px;
+            color: $black;
+            font-family: "Oswald", sans-serif;
+            font-size: 70px;
+            line-height: 1;
+            margin-bottom: 30px;
         }
         .labels {
-        color: $primary;
-        span {
-            &::after {
-            content: "\00b7";
-            margin: 0 6px;
+            color: $primary;
+            span {
+                &::after {
+                    content: "\00b7";
+                    margin: 0 6px;
+                }
+                &:last-child::after {
+                    display: none;
+                }
             }
-            &:last-child::after {
-            display: none;
-            }
-        }
         }
         .plot {
-        margin-top: 20px;
+            margin-top: 20px;
         }
         .ratings {
-        .rating-wrap {
-            display: flex;
-            .rating {
-            display: flex;
-            align-items: center;
-            margin-right: 32px;
-            img {
-                height: 30px;
-                flex-shrink: 0;
-                margin-right: 6px;
+            .rating-wrap {
+                display: flex;
+                .rating {
+                    display: flex;
+                    align-items: center;
+                    margin-right: 32px;
+                    img {
+                        height: 30px;
+                        flex-shrink: 0;
+                        margin-right: 6px;
+                    }
+                }
             }
-            }
-        }
         }
         h3 {
-        margin: 24px 0 6px;
-        color: $black;
-        font-family: "Oswald", sans-serif;
-        font-size: 20px;
+            margin: 24px 0 6px;
+            color: $black;
+            font-family: "Oswald", sans-serif;
+            font-size: 20px;
         }
     }
     @include media-breakpoint-down(xl) {
@@ -228,7 +231,7 @@ export default {
         .poster {
             margin: 0 auto 40px;
         }
-    } 
+    }
     @include media-breakpoint-down(md) {
         .poster {
             width: 300px;
@@ -240,7 +243,7 @@ export default {
             }
             .ratings {
                 .rating-wrap {
-                    display : block;
+                    display: block;
                     .rating {
                         margin-top: 10px;
                     }

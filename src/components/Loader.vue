@@ -1,15 +1,16 @@
 <template>
-    <div 
-    :style="{
-        width: `${size}rem`,
-        height: `${size}rem`,
-        'z-index': zIndex
+    <div
+        :style="{
+            width: `${size}rem`,
+            height: `${size}rem`,
+            'z-index': zIndex,
         }"
-    :class="{ 
-        absolute, 
-        fixed 
-        }" 
-    class="spinner-border text-primary"></div>
+        :class="{
+            absolute,
+            fixed,
+        }"
+        class="spinner-border text-primary"
+    ></div>
 </template>
 
 <script>
@@ -17,22 +18,22 @@ export default {
     props: {
         size: {
             type: Number,
-            default:2
+            default: 2,
         },
         absolute: {
             type: Boolean,
-            default: false
+            default: false,
         },
         fixed: {
             type: Boolean,
-            default: false
+            default: false,
         },
         zIndex: {
             type: Number,
-            default: 0
-        }
-    }
-}
+            default: 0,
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>

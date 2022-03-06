@@ -1,83 +1,70 @@
 <template>
-  <div class="about">
-    <div class="photo">
-      <Loader
-      v-if="imageLoading"
-      absolute >
-      </Loader>
-      <img 
-      :src="image" 
-      :alt="name">
+    <div class="about">
+        <div class="photo">
+            <Loader v-if="imageLoading" absolute> </Loader>
+            <img :src="image" :alt="name" />
+        </div>
+        <div class="name">
+            {{ name }}
+        </div>
+        <div>{{ email }}</div>
+        <div>{{ blog }}</div>
+        <div>{{ phone }}</div>
     </div>
-    <div class="name">
-      {{ name }}
-    </div>
-    <div>{{ email }}</div>
-    <div>{{ blog }}</div>
-    <div>{{ phone }}</div>
-  </div>
 </template>
 
 <script>
-import Loader from '../components/Loader.vue'
+import { mapState } from 'vuex'
+import Loader from "../components/Loader.vue";
 export default {
-  components: {
-    Loader
-  },
-  data() {
-    return {
-      imageLoading: true
-    }
-  },
-  computed: {
-    image() {
-      return this.$store.state.about.image
+    components: {
+        Loader,
     },
-    name() {
-      return this.$store.state.about.name
+    data() {
+        return {
+            imageLoading: true,
+        };
     },
-    email() {
-      return this.$store.state.about.email
+    computed: {
+        ...mapState('about', [
+            'image',
+            'name',
+            'email',
+            'blog',
+            'phone',
+        ])
     },
-    blog() {
-      return this.$store.state.about.blog
+    mounted() {
+        this.init();
     },
-    phone() {
-      return this.$store.state.about.phone
-    }
-  },
-  mounted() {
-    this.init()
-  },
-  methods: {
-    async init() {
-      await this.$loadImage(this.image)
-      this.imageLoading = false
-    }
-  }
-}
+    methods: {
+        async init() {
+            await this.$loadImage(this.image);
+            this.imageLoading = false;
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
 @import "../scss/main";
 .about {
-  text-align: center;
+    text-align: center;
     img {
-      width: 250px;
-      height: 250px;
-      margin: 40px auto 20px;
-      padding: 30px;
-      border: 10px solid $gray-300;
-      border-radius: 50%;
-      box-sizing: border-box;
-      background-color: $gray-200;
-      position: relative;
-    
-  }
-  .name {
-    font-size: 40px;
-    font-family: "Oswald", sans-serif;
-    margin-bottom: 20px;
-  }
+        width: 250px;
+        height: 250px;
+        margin: 40px auto 20px;
+        padding: 30px;
+        border: 10px solid $gray-300;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background-color: $gray-200;
+        position: relative;
+    }
+    .name {
+        font-size: 40px;
+        font-family: "Oswald", sans-serif;
+        margin-bottom: 20px;
+    }
 }
 </style>

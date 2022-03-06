@@ -1,9 +1,5 @@
 <template>
-    <router-link 
-        to="/" 
-        class="logo">
-            <span>JMDbAPI</span>.COM
-    </router-link>
+    <router-link to="/" class="logo"> <span>JMDbAPI</span>.COM </router-link>
 </template>
 
 <style lang="scss" scoped>

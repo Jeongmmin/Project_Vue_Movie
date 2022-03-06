@@ -1,33 +1,28 @@
 <template>
     <div class="container">
-        <input 
+        <input
             class="form-control"
-            v-model="title" 
+            v-model="title"
             type="text"
             placeholder="Search for Movies, Series & more"
-            @keyup.enter="apply">
+            @keyup.enter="apply"
+        />
         <div class="selects">
             <select
                 v-for="filter in filters"
                 v-model="$data[filter.name]"
                 :key="filter.name"
-                class="form-select">
-                <option 
-                v-if="filter.name === 'year'"
-                value="">
+                class="form-select"
+            >
+                <option v-if="filter.name === 'year'" value="">
                     All Years
                 </option>
-                <option
-                v-for="item in filter.items"
-                :key="item">
-                {{ item }}
+                <option v-for="item in filter.items" :key="item">
+                    {{ item }}
                 </option>
             </select>
         </div>
-        <button class="btn btn-primary"
-        @click="apply">
-        Apply
-        </button>    
+        <button class="btn btn-primary" @click="apply">Apply</button>
     </div>
 </template>
 
@@ -35,44 +30,44 @@
 export default {
     data() {
         return {
-            title:'',
-            type: 'movie',
-            number: '10',
-            year: '',
+            title: "",
+            type: "movie",
+            number: "10",
+            year: "",
             filters: [
                 {
-                    name:'type',
-                    items: ['movie', 'series', 'episode'],
+                    name: "type",
+                    items: ["movie", "series", "episode"],
                 },
                 {
-                    name:'number',
-                    items: [10, 20, 30]
+                    name: "number",
+                    items: [10, 20, 30],
                 },
                 {
-                    name:'year',
-                    items: ( () => {
-                        const years = []
-                        const thisYear = new Date().getFullYear()
-                        for (let i = thisYear; i >=1985; i -= 1) {
-                            years.push(i)
+                    name: "year",
+                    items: (() => {
+                        const years = [];
+                        const thisYear = new Date().getFullYear();
+                        for (let i = thisYear; i >= 1985; i -= 1) {
+                            years.push(i);
                         }
-                        return years
-                    })()
-                }
-            ]
-        }
+                        return years;
+                    })(),
+                },
+            ],
+        };
     },
     methods: {
         async apply() {
-            this.$store.dispatch('movie/serchMovies', {
+            this.$store.dispatch("movie/searchMovies", {
                 title: this.title,
                 type: this.type,
                 number: this.number,
-                year: this.year
-            })
-        }
-    }
-}
+                year: this.year,
+            });
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -83,17 +78,17 @@ export default {
         margin-right: 10px;
         font-size: 15px;
         &:last-child {
-        margin-right: 0;
+            margin-right: 0;
         }
     }
     .selects {
         display: flex;
         select {
-        width: 120px;
-        margin-right: 10px;
-        &:last-child {
-            margin-right: 0;
-        }
+            width: 120px;
+            margin-right: 10px;
+            &:last-child {
+                margin-right: 0;
+            }
         }
     }
     .btn {
@@ -104,7 +99,7 @@ export default {
         color: white;
     }
     @include media-breakpoint-down(lg) {
-        display:block;
+        display: block;
         input {
             margin-right: 0;
             margin-bottom: 10px;

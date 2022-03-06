@@ -1,18 +1,18 @@
 <template>
-  <Header />
-  <router-view/>
-  <Footer></Footer>
+    <Header />
+    <router-view />
+    <Footer></Footer>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 export default {
-  components: {
-    Header,
-    Footer
-  }
-}
+    components: {
+        Header,
+        Footer,
+    },
+};
 </script>
 
 <style lang="scss">
@@ -22,11 +22,11 @@ export default {
 }
 .router-link {
     :hover {
-      text-decoration-color: black;
+        text-decoration-color: black;
     }
 }
 select > option:hover {
-  color: #888;
-  cursor: pointer;
+    color: #888;
+    cursor: pointer;
 }
 </style>
