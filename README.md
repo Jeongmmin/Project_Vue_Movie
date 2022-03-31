@@ -1,9 +1,9 @@
 ## 🎞 JMDB API Project
 
-> Vue.js와 Open api를 이용한 영화검색 사이트 입니다.  
-연도별, 시리즈별, 에피소드 별로 검색이 가능하며 , 한 번에 10 -30개까지 검색이 가능합니다.
-또한 검색된 영화의 포스터 부분을 누르면 영화의 상세정보를 볼 수 있는 상세페이지로 이동합니다.
-component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 사용하여 화면간의 전환을 간편하게 할 수 있도록 적용했습니다.
+> Vue.js와 Open api를 이용한 영화검색 사이트 입니다.<br/>
+연도별, 시리즈별, 에피소드 별로 검색이 가능하며 , 한 번에 10 -30개까지 검색이 가능합니다.<br/>
+또한 검색된 영화의 포스터 부분을 누르면 영화의 상세정보를 볼 수 있는 상세페이지로 이동합니다.<br/>
+component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 사용하여 화면간의 전환을 간편하게 할 수 있도록 적용했습니다.<br/>
 또한 Scss를 적용하여 코드를 더욱 간결하게 보이도록 구현했습니다.
 
 <br/>
@@ -13,12 +13,8 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
     
     
   💡 사이트 이동하기 💡  
-  
-  (아래 링크 or 이미지 클릭🖱)
 
-   [🔗 project-vue-movie](https://project-vue-movie.netlify.app)
-     
-  [![🎞 project-vue-movie](https://user-images.githubusercontent.com/82005305/156928842-b46ba520-1629-4ddf-9da2-e539fae67eeb.gif)](https://project-vue-movie.netlify.app)   
+   [🔗 project-vue-movie](https://project-vue-movie.netlify.app)  
 
   
 </div>
@@ -26,6 +22,8 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
  
 
 ## 📝 Skill & Preview
+<br/>
+<br/>
 <p align="center">
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> &nbsp
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> &nbsp
@@ -35,15 +33,12 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
 <img src="https://img.shields.io/badge/OpenAPI-FFD900?style=flat-square&logo=OpenAPI Initiative&logoColor=white"/> &nbsp 
 <br/>
 <br/>
-<!-- <p align="center">
-<img src="https://user-images.githubusercontent.com/82005305/135117113-a16c2cd5-f156-4720-a87c-f4a0259a0930.gif">
+<p align="center">
+<img src="https://user-images.githubusercontent.com/82005305/156928842-b46ba520-1629-4ddf-9da2-e539fae67eeb.gif">
 </p>
 
 <br/>
 
-<p align="center">
-<img src="https://user-images.githubusercontent.com/82005305/135118972-5efbb03a-4738-4e04-bb22-5d8b79c68c58.gif">
-</p> -->
 
 
 <br/>
