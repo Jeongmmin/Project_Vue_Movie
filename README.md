@@ -10,15 +10,27 @@ component를 간단하게 하기 위해서 Vuex를 사용했고, Vue-router를 �
 
 ## 📌 배포 사이트
 <div align="center">   
-    
-    
-  💡 사이트 이동하기 💡  
+<br/>
+💡 사이트 이동하기 💡        
+<br/>
+<br/>
+<a href="https://project-vue-movie.netlify.app" target="_blank"><img src="https://img.shields.io/badge/ project vue movie 앱-d2b1fc?style=flat-square&logo=MEGA&logoColor=white"/></a>
+<br/>
+<br/>
+(ctrl + click시 새창열기 가능)  
 
-   [🔗 project-vue-movie](https://project-vue-movie.netlify.app)  
+<!--    [🔗 project-vue-movie](https://project-vue-movie.netlify.app)   -->
 
   
 </div>
 
+
+## 📅 프로젝트 기간
+<br/> 
+
+> **2022.08.25 - 2022.08.31**
+<br/>
+<br/>
  
 
 ## 📝 Skill & Preview
